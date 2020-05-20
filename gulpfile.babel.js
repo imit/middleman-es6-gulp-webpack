@@ -16,7 +16,6 @@ import htmlmin from 'gulp-htmlmin';
 import imagemin from 'gulp-imagemin';
 import del from 'del';
 import webpack from 'webpack-stream';
-import browserSync from 'browser-sync';
 const PRODUCTION = yargs.argv.prod;
 
 export const styles = () => {
@@ -27,17 +26,8 @@ export const styles = () => {
 		// .pipe(gulpif(PRODUCTION, cleanCss({compatibility: 'ie8'})))
 		.pipe(gulpif(!PRODUCTION, sourcemaps.write()))
 		.pipe(dest('source/stylesheets'))
-		// .pipe(browser_sync.stream());
 		.pipe(touch());
 }
-
-export const vendorScripts = () => {
-	return src('source/dev/js-vendor/*.js')
-	.pipe(concat('vendor.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('source/javascripts'))
-}
-
 
 export const scripts = () => {
 	return src('source/dev/js/app.js')
@@ -61,7 +51,7 @@ export const reload = done => {
 };
 
 export const clean = () => del(['dist']);
-export const dev = series(clean, parallel(styles, scripts, vendorScripts), serve ,watchForChanges)
-export const build = series(clean, parallel(styles, scripts, vendorScripts))
+export const dev = series(clean, parallel(styles, scripts), serve ,watchForChanges)
+export const build = series(clean, parallel(styles, scripts))
 
 export default dev;
