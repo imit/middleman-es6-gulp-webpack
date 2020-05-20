@@ -1,0 +1,41 @@
+{
+  "name": "gulp-boilerplate",
+  "description": "A boilerplate template for HTML+SASS+ES6+Webpack+ImageMin with a dev server with live reloading and a production script to minify the shit out of it!",
+  "version": "1.1.0",
+  "author": "boxdox",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build --prod"
+  },
+  "devDependencies": {
+    "@babel/core": "7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "7.8.3",
+    "autoprefixer": "9.6.1",
+    "babel-loader": "8.0.6",
+    "browser-sync": "2.26.7",
+    "cssnano": "4.1.10",
+    "del": "3.0.0",
+    "gulp": "4.0.2",
+    "gulp-clean-css": "4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "5.0.1",
+    "gulp-if": "2.0.2",
+    "gulp-imagemin": "5.0.3",
+    "gulp-postcss": "8.0.0",
+    "gulp-sass": "4.0.2",
+    "gulp-sourcemaps": "2.6.5",
+    "gulp-touch-fd": "github:funkedigital/gulp-touch-fd",
+    "gulp-uglify": "^3.0.2",
+    "uglifyjs-webpack-plugin": "2.2.0",
+    "webpack-merge": "4.2.2",
+    "webpack-stream": "5.2.1",
+    "yargs": "12.0.5"
+  },
+  "dependencies": {
+    "gumshoejs": "^5.1.2",
+    "sal.js": "^0.7.5",
+    "stickybits": "^3.7.7"
+  }
+}
