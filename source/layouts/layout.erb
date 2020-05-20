@@ -3,14 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Use the title from a page's frontmatter if it has one -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= current_page.data.title || "Middleman" %></title>
-    <%= stylesheet_link_tag "site" %>
-    <%= javascript_include_tag "site" %>
+    <%= stylesheet_link_tag "style" %>
+		<script>document.getElementsByTagName("html")[0].className += " js";</script>
+		
   </head>
-  <body>
-    <%= yield %>
+  <body class=" <%= current_page.path.sub(".html", "") %>">
+    <main><%= yield %></main>
+	
+	
+	<%= javascript_include_tag "vendor" %>
+	<%= javascript_include_tag "main" %>
   </body>
 </html>
