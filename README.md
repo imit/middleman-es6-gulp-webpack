@@ -14,7 +14,7 @@ bundle install && npm install
 Start development server
 
 ```
-gulp
+middleman server (it will run gulp in parallel)
 ```
 
 
